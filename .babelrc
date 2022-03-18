@@ -1,13 +1,12 @@
 {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "useBuiltIns": "usage",
-          "corejs": "3.9.1"
-        },
-        "@babel/preset-typescript"
-      ]
-
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": "3.9.1"
+      },
+      "@babel/preset-typescript"
     ]
-  }
+  ]
+}

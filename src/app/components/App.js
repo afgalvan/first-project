@@ -1,7 +1,15 @@
-class App {
+import { html } from 'lit-html';
+
+import { Component } from './Component';
+
+class App extends Component {
+  constructor() {
+    super('#root');
+  }
+
   init = () => {
-    console.log('Initialized app');
+    this.render(html`<h1>Index</h1>`);
   };
 }
 
-export const app = new App();
+export default new App();

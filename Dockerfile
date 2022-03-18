@@ -1,16 +1,15 @@
-FROM node:16-alpine3.15
+FROM node:16-alpine3.15 as build
 
 WORKDIR /app
 
-# Add package.lock.json file
-COPY ./package.json ./
-
+COPY package.json .
+COPY package-lock.json .
 RUN npm install
 
 COPY . .
-
-EXPOSE 4000
-
 RUN npm run build
 
-ENTRYPOINT  [ "npm", "run" ]
+FROM nginx:1.20-alpine
+
+COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /app/dist /usr/share/nginx/html

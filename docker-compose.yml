@@ -3,11 +3,10 @@ version: '3.9'
 
 services:
   frontend:
-    container_name: web-template
+    image: web-project:prod
+    container_name: web-project
     restart: always
     build: .
-    volumes:
-      - ./src:/app/src
     ports:
-      - 4000:4000
-    command: [ "start" ]
+      - 80:80
+      - 443:433

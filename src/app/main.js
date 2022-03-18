@@ -1,6 +1,6 @@
 import './main.scss';
 
-import { app } from './components/App';
+import app from './components/App';
 
 const main = () => {
   app.init();

@@ -3,9 +3,12 @@ version: '3.9'
 
 services:
   frontend:
+    image: web-project:dev
     container_name: web-template
     restart: always
-    build: .
+    build:
+      context: .
+      dockerfile: dev.dockerfile
     volumes:
       - ./src:/app/src
     ports:
