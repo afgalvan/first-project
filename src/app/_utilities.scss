@@ -1,0 +1,32 @@
+@use 'sass:math';
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+@function rem($rawDimension) {
+  $pixels: $rawDimension * 1px;
+  $remEquivalents: math.div($pixels, 16px);
+  @return $remEquivalents * 1rem;
+}
+
+@mixin animateAll($time, $transitionStyle) {
+  transition: all $time $transitionStyle;
+}
+
+@mixin defaultTransition {
+  @include animateAll(0.2s, ease-in);
+}
+
+// Font ========================================================================
+$kumbh: 'Kumbh Sans', sans-serif;
+$defaultFont: $kumbh;
+$fontSize: rem(24);
+// Color schema ================================================================
+$primaryColor: #4a2a82;
+$secondaryColor: hsl(257, 45%, 43%);
+$buttonColor: hsl(258, 82%, 69%);
+$background: #222526;
+$primaryDark: #181a1b;
+$secondaryDark: #646464;
+$taskColor: #2f3131;
+$fontColor: hsl(218, 22%, 67%);
+
+// misc ========================================================================
