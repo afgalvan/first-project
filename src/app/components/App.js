@@ -1,15 +1,11 @@
 import { html } from 'lit-html';
 
-import { Component } from './Component';
+import Button from './Button';
+import Title from './Title';
 
-class App extends Component {
-  constructor() {
-    super('#root');
-  }
+const App = () => {
+  const name = 'John Doe';
+  return html`${Title({ name })} ${Button({ name })}`;
+};
 
-  init = () => {
-    this.render(html`<h1>Index</h1>`);
-  };
-}
-
-export default new App();
+export default App;

@@ -30,7 +30,7 @@ jobs:
         uses: bahmutov/npm-install@v1
 
       - name: Run linter
-        run: npm run lint:fix
+        run: yarn lint:fix
 
       - name: 🧪 Run tests
-        run: npm run test
+        run: yarn test

@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { ESBuildMinifyPlugin } = require('esbuild-loader');
 
 module.exports = {
   entry: {
@@ -19,13 +20,22 @@ module.exports = {
       {
         test: /\.m?js$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
+        loader: 'esbuild-loader',
       },
       {
         test: /\.s[ac]ss$/i,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+          {
+            loader: 'esbuild-loader',
+            options: {
+              loader: 'css',
+              minify: true,
+            },
+          },
+        ],
       },
       {
         test: /\.(png|jpg|gif)$/i,
@@ -35,6 +45,7 @@ module.exports = {
   },
 
   plugins: [
+    new ESBuildMinifyPlugin(),
     new HtmlWebpackPlugin({
       template: '/src/html/index.html',
       filename: 'index.html',
@@ -49,4 +60,11 @@ module.exports = {
       },
     }),
   ],
+
+  resolve: {
+    extensions: ['.js', '.jsx'],
+    alias: {
+      lib: path.join(__dirname, 'src/lib/'),
+    },
+  },
 };

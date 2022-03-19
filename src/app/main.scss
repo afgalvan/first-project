@@ -8,3 +8,24 @@ body {
   font-family: $defaultFont;
   color: white;
 }
+
+.title {
+  cursor: pointer;
+  color: red;
+}
+
+button {
+  @include defaultTransition();
+  border: none;
+  cursor: pointer;
+  display: block;
+  background-color: black;
+  color: white;
+  border-radius: rem(5);
+  padding: rem(10);
+  font-weight: bolder;
+
+  &:hover {
+    box-shadow: 0 rem(5) rem(10) rgba($color: #000000, $alpha: 0.3);
+  }
+}
