@@ -3,11 +3,11 @@ FROM node:16-alpine3.15 as build
 WORKDIR /app
 
 COPY package.json .
-COPY package-lock.json .
-RUN npm install
+COPY yarn.lock .
+RUN yarn
 
 COPY . .
-RUN npm run build
+RUN yarn build
 
 FROM nginx:1.20-alpine
 

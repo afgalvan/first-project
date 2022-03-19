@@ -1,20 +1,6 @@
-@import './utilities';
+@import '../utilities';
 
-body {
-  margin: 0;
-  padding: 0;
-  text-rendering: optimizeSpeed;
-  background-color: $background;
-  font-family: $defaultFont;
-  color: white;
-}
-
-.title {
-  cursor: pointer;
-  color: red;
-}
-
-button {
+.button {
   @include defaultTransition();
   border: none;
   cursor: pointer;

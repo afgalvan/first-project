@@ -1,8 +1,6 @@
-import './main.scss';
-
 import { render } from 'lib/utils';
 
-import App from './components/App';
+import App from './App';
 
 const main = () => render(App, document.getElementById('root'));
 

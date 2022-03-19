@@ -1,7 +1,9 @@
+import './App.scss';
+
 import { html } from 'lit-html';
 
-import Button from './Button';
-import Title from './Title';
+import Button from './components/Button';
+import Title from './components/Title';
 
 const App = () => {
   const name = 'John Doe';
