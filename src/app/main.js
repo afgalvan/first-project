@@ -1,10 +1,10 @@
 import './main.scss';
 
-import app from './components/App';
+import { render } from 'lib/utils';
 
-const main = () => {
-  app.init();
-};
+import App from './components/App';
+
+const main = () => render(App, document.getElementById('root'));
 
 if (document.readyState == 'loading') {
   document.addEventListener('DOMContentLoaded', main);

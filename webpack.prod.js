@@ -2,7 +2,7 @@ const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
+const { ESBuildMinifyPlugin } = require('esbuild-loader');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -15,11 +15,10 @@ module.exports = merge(common, {
   optimization: {
     minimize: true,
     minimizer: [
-      new TerserPlugin({
+      new ESBuildMinifyPlugin({
         extractComments: true,
-        terserOptions: {
-          compress: true,
-        },
+        css: true,
+        minify: true,
       }),
       new CssMinimizerPlugin({
         minimizerOptions: {
