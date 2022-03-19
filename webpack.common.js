@@ -12,6 +12,7 @@ module.exports = {
   },
 
   module: {
+    noParse: /gun\.js$/,
     rules: [
       {
         test: /\.html$/i,

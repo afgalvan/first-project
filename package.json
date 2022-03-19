@@ -15,6 +15,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "gun": "^0.2020.1236",
     "lit-html": "^2.2.1"
   },
   "devDependencies": {
