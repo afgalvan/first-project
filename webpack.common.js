@@ -48,7 +48,7 @@ module.exports = {
   plugins: [
     new ESBuildMinifyPlugin(),
     new HtmlWebpackPlugin({
-      template: '/src/html/index.html',
+      template: './src/html/index.html',
       filename: 'index.html',
       chunks: ['app'],
       minify: {
